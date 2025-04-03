@@ -7,7 +7,7 @@ const ApiContainer =({userData,FetchUsers})=>{
     useEffect(()=>{
         FetchUsers()
     })
-    return <div> userData.loading ?(<h2>loading</h2>):userData.error?(<h2>{userData.error}</h2>):(<div><h2>user list</h2>
+    return <div> userData.loading ?(<h2>loading</h2>) : userData.error ?(<h2>{userData.error}</h2>):(<div><h2>user list</h2>
         <div>{
             userData && userData.users && userData.users.map(user=>user.name)
             }</div>
