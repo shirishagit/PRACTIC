@@ -1,22 +1,28 @@
 import { createStore } from "redux";
 
 const initionalState ={
-    amount:1000,
-    balance:1000,
-    fullName:"shirisha"
+    amount:0,
+    fullName:"",
+    mobile: []
 };
 
 
 const reducer =(state=initionalState,action)=>{
       switch(action.type){
         case "deposite":return{
-            ...state,amount:state.amount+action.payload
+            ...state,amount:state.amount+ +action.payload
         };
         case "withdraw":return{
-            ...state,balance:state.balance+action.payload
+            ...state,amount:state.amount- +action.payload
         };
         case "nameUpdate":return{
-            ...state,fullName:state.fullName+action.payload
+            ...state,fullName:state.fullName+ action.payload
+        };
+        case "mobileUpdate":return{
+            ...state,mobile:state.mobile+ action.payload
+        };
+        case "reset":return{
+            initionalState
         };
         default:return state;
       }

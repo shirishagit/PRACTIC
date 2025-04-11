@@ -3,7 +3,7 @@ import { useSelector } from "react-redux"
 
 
 const Account = () =>{
-    let data = useSelector((state)=>{
+    const data = useSelector((state)=>{
         return state
     })
   
@@ -15,15 +15,15 @@ const Account = () =>{
                     <thead >
                         <tr style={{ border: '1px solid black'}}>
                             <th style={{ border: '1px solid black',padding:"10px"}}>Amount</th>
-                            <th style={{ border: '1px solid black',padding:"10px"}}>Balance</th>
-                            <th style={{ border: '1px solid black',padding:"10px"}}>Fullname</th>
+                            <th style={{ border: '1px solid black',padding:"10px"}}>Name</th>
+                            <th style={{ border: '1px solid black',padding:"10px"}}>Mobile</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td style={{ border: '1px solid black',padding:"10px"}}>{data.amount}</td>
-                            <td style={{ border: '1px solid black',padding:"10px"}}>{data.balance}</td>
                             <td style={{ border: '1px solid black',padding:"10px"}}>{data.fullName}</td>
+                            <td style={{ border: '1px solid black',padding:"10px"}}>{data.mobile}</td>
                             
                         </tr>
                     </tbody>
